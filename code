@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Audio Player</title>
+<style>
+  #player-container {
+    width: 35px; /* Adjust the size if needed */
+    height: 35px; /* Adjust the size if needed */
+    background: url('https://raw.githubusercontent.com/seafoxnice/seafoxnice.github.io/main/image_speaker.png') no-repeat center center;
+    background-size: contain; /* Ensures the image fits within the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  body {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<div id="player-container" onclick="toggleAudio()"></div>
+
+<audio id="audio-element">
+  <source src="https://raw.githubusercontent.com/seafoxnice/seafoxnice.github.io/main/Live_%EC%98%88%EB%AC%B8.m4a" type="audio/x-m4a">
+</audio>
+
+<script>
+  var audioElement = document.getElementById("audio-element");
+  var playerContainer = document.getElementById("player-container");
+
+  function toggleAudio() {
+    if (audioElement.paused) {
+      audioElement.play();
+      playerContainer.style.color = "lightgrey"; /* Changing color on play */
+    } else {
+      audioElement.pause();
+      playerContainer.style.color = "gray"; /* Changing color on pause */
+    }
+  }
+</script>
+</body>
+</html>
